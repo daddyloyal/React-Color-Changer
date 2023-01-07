@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-
+import Header from "./Header";
+import Content from "./Content";
+import SearchColor from "./SearchColor";
+import { useState } from "react";
 function App() {
+  const [colorValue, setColorValue] = useState('')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App bg-white dark:bg-slate-800 mx-auto min-h-screen">
+      <Header title={"Color Changer"} />
+      <Content colorValue={colorValue}/>
+      <SearchColor 
+        colorValue={colorValue}
+        setColorValue={setColorValue}/>
     </div>
   );
 }
